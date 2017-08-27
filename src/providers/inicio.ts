@@ -27,7 +27,6 @@ export class InicioProvider {
           }
         });
   }
-
     googleLogin() {
     this.googlePlus.login({
       'webClientId': Inicio.googleClientId

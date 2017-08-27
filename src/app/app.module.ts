@@ -16,6 +16,7 @@ import * as firebase from 'firebase';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { GooglePlus } from '@ionic-native/google-plus';
 
 firebase.initializeApp(Inicio.firebaseConfig);
 
@@ -26,7 +27,7 @@ firebase.initializeApp(Inicio.firebaseConfig);
     ContactPage,
     HomePage,
     TabsPage,
-    InicioPage,
+    InicioPage
   ],
   imports: [
     BrowserModule,
@@ -42,7 +43,7 @@ firebase.initializeApp(Inicio.firebaseConfig);
     ContactPage,
     HomePage,
     TabsPage,
-    InicioPage,
+    InicioPage
   ],
   providers: [
     StatusBar,
@@ -50,6 +51,7 @@ firebase.initializeApp(Inicio.firebaseConfig);
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     DbProvider,
     InicioProvider,
+    GooglePlus,
   ]
 })
 export class AppModule {}
