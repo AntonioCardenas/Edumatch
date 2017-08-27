@@ -1,9 +1,9 @@
 import { TabsPage } from './pages/tabs/tabs'
 
-export namespace Login {
+export namespace Inicio {
 export const firebaseConfig = {
 	
 };
 
-export const homePage =TabsPage ;
+export const homePage =TabsPage;
 }

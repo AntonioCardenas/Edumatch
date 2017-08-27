@@ -10,8 +10,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { Inicio } from '../inicio';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { DbProvider } from '../providers/db/db';
-import { InicioProvider } from '../providers/inicio/inicio';
+import { DbProvider } from '../providers/db';
+import { InicioProvider } from '../providers/inicio';
 
 @NgModule({
   declarations: [
