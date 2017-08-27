@@ -10,7 +10,7 @@ export class InicioProvider {
   private oauth: OauthCordova;
   private navCtrl: NavController;
 
-  constructor(public zone: NgZone, public googlePlus: GooglePlus) { 
+  constructor(public zone: NgZone, private googlePlus: GooglePlus) { 
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
             if (user["emailVerified"]) {
@@ -28,8 +28,8 @@ export class InicioProvider {
         });
   }
 
-    googleInicio() {
-    this.googlePlus.Inicio({
+    googleLogin() {
+    this.googlePlus.login({
       'webClientId': Inicio.googleClientId
     }).then((success) => {
       let credential = firebase.auth.GoogleAuthProvider.credential(success['idToken'], null);
@@ -46,7 +46,7 @@ export class InicioProvider {
   setNavController(navCtrl) {
     this.navCtrl = navCtrl;
   }
-  inicioInvitado() {
+  invitadoLogin() {
     firebase.auth().signInAnonymously()
       .then((success) => {
       })

@@ -11,4 +11,6 @@ export const firebaseConfig = {
 };
 
 export const homePage =TabsPage;
+  export const googleClientId: string = "116703353846-bcsc69jce417oh7vequbi4bvfg3ks4dd.apps.googleusercontent.com";
+
 }

@@ -2,8 +2,8 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-import { AngularFireModule, AuthMethods, AuthProviders } from 'angularfire2';
 import { AboutPage } from '../pages/about/about';
+import { InicioPage } from '../pages/inicio/inicio';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
@@ -12,6 +12,12 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { DbProvider } from '../providers/db';
 import { InicioProvider } from '../providers/inicio';
+import * as firebase from 'firebase';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
+firebase.initializeApp(Inicio.firebaseConfig);
 
 @NgModule({
   declarations: [
@@ -19,12 +25,15 @@ import { InicioProvider } from '../providers/inicio';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    InicioPage,
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    AngularFireModule.initializeApp(Inicio.firebaseConfig,{ method: AuthMethods.Password, provider: AuthProviders.Password })
+    AngularFireModule.initializeApp(Inicio.firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -32,7 +41,8 @@ import { InicioProvider } from '../providers/inicio';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    InicioPage,
   ],
   providers: [
     StatusBar,
